@@ -1,0 +1,26 @@
+using System;
+
+namespace ОбучениеДиск
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string birthYear;
+            string name;
+            string signOfZadiac;
+            string workName;
+            Console.WriteLine("Здравствуйте, как вас зовут?");
+            name = Console.ReadLine();
+            Console.WriteLine("В каком году вы родлись?");
+            birthYear = Console.ReadLine();
+            Console.WriteLine("Какой у вас знак зодиака?");
+            signOfZadiac = Console.ReadLine();
+            Console.WriteLine("Кем вы работаете?");
+            workName = Console.ReadLine();
+            Console.WriteLine($"Вас зовут {name}, вы родились в {birthYear}, ваш знак Зодиака {signOfZadiac}," +
+                $"вы работаете - {workName}.");
+
+        }
+    }
+}
