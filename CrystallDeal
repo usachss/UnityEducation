@@ -8,17 +8,18 @@ namespace ОбучениеДиск
         {
             Console.WriteLine("Сколько у вас денех?");
             int amountOfMoney = Convert.ToInt32(Console.ReadLine());
-            int amountOfMoneyRest;
-            int crystallPrice = 14;
-            Console.WriteLine("Сколько хотите купить кристаллов?");
-            int crystallAmountToBuy = Convert.ToInt32(Console.ReadLine());
+            int crystallAmount;
+            int crystallPrice;
+            crystallPrice = 14;
             bool enoughMoney;
+            Console.WriteLine("Сколько хотите купить кристаллов?");
+            crystallAmount = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Добрый день, у нас как раз завоз новых кристаллов, цена одного {crystallPrice}," +
                 $" не хотите купить?");
-            enoughMoney = (amountOfMoney - (crystallAmountToBuy * crystallPrice) > 0);
-            amountOfMoneyRest = (amountOfMoney -(crystallAmountToBuy * crystallPrice) * Convert.ToInt32(enoughMoney));
-            crystallAmountToBuy *= Convert.ToInt32(enoughMoney);
-            Console.WriteLine($"Кристталлов куплено:денег осталось - {crystallAmountToBuy}:{amountOfMoneyRest}!");
+            enoughMoney = (amountOfMoney - (crystallAmount * crystallPrice) > 0);
+            amountOfMoney = (amountOfMoney - crystallAmount * crystallPrice * Convert.ToInt32(enoughMoney));
+            crystallAmount *= Convert.ToInt32(enoughMoney);
+            Console.WriteLine($"Кристталлов куплено:денег осталось - {crystallAmount}:{amountOfMoney}!");
         }
     }
 }
