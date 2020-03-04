@@ -6,12 +6,16 @@ namespace ОбучениеДиск
     {
         static void Main(string[] args)
         {
+            int allMinutes;
+            int waitingHours;
+            int waitingMinutes;
+            int numberOfBabushkas;
             Console.WriteLine("Среднее время приема одного человека - 10 минут. Введите количество бабушек перед вами в очереди:");
-            int NumberOfBabushkas = Convert.ToInt64(Console.ReadLine());
-            int AllMinutes = NumberOfBabushkas * 10;
-            int WaitingHours = AllMinutes / 60;
-            int WaitingMinutes = AllMinutes % 60;
-            Console.WriteLine($"Время ожидание в очереди: {WaitingHours}:{WaitingMinutes}!");
+            int numberOfBabushkas = Convert.ToInt64(Console.ReadLine());
+            int allMinutes = numberOfBabushkas * 10;
+            int waitingHours = allMinutes / 60;
+            int waitingMinutes = allMinutes % 60;
+            Console.WriteLine($"Время ожидание в очереди: {waitingHours}:{waitingMinutes}!");
         }
     }
 }
