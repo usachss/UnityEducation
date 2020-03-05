@@ -1,0 +1,114 @@
+using System;
+
+namespace ОбучениеДиск
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float dollars;
+            float euros;
+            float rubles;
+            float dollarsToRubles;
+            float eurosToRubles;
+            float dollarsToEuros;
+            int operationnumber;
+            float amountOfcurrency;
+            dollarsToRubles = 70;
+            eurosToRubles = 75;
+            dollarsToEuros = 0.9f;
+
+            Console.WriteLine("Введите количество ваших валют в следующем порядке: Доллары, Евро, Рубли");
+            dollars = Convert.ToSingle(Console.ReadLine());
+            euros =   Convert.ToSingle(Console.ReadLine());
+            rubles =  Convert.ToSingle(Console.ReadLine());
+            Console.WriteLine("Выберите операцию\n" +
+                "1 - Доллары на рубли\n" +
+                "2 - рубли на доллары\n" +
+                "3 - евро на доллары\n" +
+                "4 - доллары на евро\n" +
+                "5 - евро на рубли\n" +
+                "6 - рубли на евро\n");
+            operationnumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите количество количество на обмен");
+            amountOfcurrency = Convert.ToSingle(Console.ReadLine());
+
+            switch (operationnumber)
+            {
+                case 1: if ((dollars - amountOfcurrency)>=0)
+                    {
+                        rubles += amountOfcurrency * dollarsToRubles;
+                        dollars -= amountOfcurrency;
+                        Console.WriteLine($"Ваш баланс: {dollars} доллары, {euros} евро, {rubles} рубли");
+                    }
+                    break;
+                case 2:
+                    if ((rubles - amountOfcurrency) >= 0)
+                    {
+                        dollars += amountOfcurrency/(dollarsToRubles);
+                        rubles -= amountOfcurrency;
+                        Console.WriteLine($"Ваш баланс: {dollars} доллары, {euros} евро, {rubles} рубли");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно валюты на счету");
+                    }
+                    break;
+                case 3:
+                    if ((euros - amountOfcurrency) >= 0)
+                    {
+                        dollars += amountOfcurrency / (dollarsToEuros);
+                        euros -= amountOfcurrency;
+                        Console.WriteLine($"Ваш баланс: {dollars} доллары, {euros} евро, {rubles} рубли");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно валюты на счету");
+                    }
+                    break;
+                case 4:
+                    if ((dollars - amountOfcurrency) >= 0)
+                    {
+                        euros += amountOfcurrency * (dollarsToEuros);
+                        dollars -= amountOfcurrency;
+                        Console.WriteLine($"Ваш баланс: {dollars} доллары, {euros} евро, {rubles} рубли");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно валюты на счету");
+                    }
+                    break;
+                case 5:
+                    if ((euros - amountOfcurrency) >= 0)
+                    {
+                        rubles += amountOfcurrency * (eurosToRubles);
+                        euros -= amountOfcurrency;
+                        Console.WriteLine($"Ваш баланс: {dollars} доллары, {euros} евро, {rubles} рубли");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно валюты на счету");
+                    }
+                    break;
+                case 6:
+                    if ((rubles - amountOfcurrency) >= 0)
+                    {
+                        euros += amountOfcurrency / (eurosToRubles);
+                        rubles -= amountOfcurrency;
+                        Console.WriteLine($"Ваш баланс: {dollars} доллары, {euros} евро, {rubles} рубли");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно валюты на счету");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Такой операции нема");
+                    break;
+            }
+
+
+
+        }
+    }
+}
