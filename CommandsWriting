@@ -1,0 +1,82 @@
+using System;
+
+namespace ОбучениеДиск
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int increasingNumber;
+            string command;
+            string name;
+            string petType;
+            petType = "null";
+
+            long i;
+            i = 10;
+            Console.WriteLine("" +
+                 "Имя - задать ваше имя\n" +
+                 "Тип покемона - задать тип покемона(травяной, водяной, огненный\n" +
+                 "Слабость - узнать тип против которого проиграете\n" +
+                 "Сильность - узнать тип против которого победите\n" +
+                 "Выйти - выйти из выбора комманд");
+            while (i>0)
+            {
+
+                Console.WriteLine("Пожалуйства введите команду:");
+                command = Console.ReadLine();
+                switch (command){
+                    case ("Имя"):
+                        name = Console.ReadLine();
+                        break;
+                    case ("Тип покемона"):
+                        petType = Console.ReadLine();
+                        break;
+                    case ("Слабость"):
+                        switch (petType)
+                        {
+                            case "травяной":
+                                Console.WriteLine("огненный");
+                                break;
+                            case "водяной":
+                                Console.WriteLine("травяной");
+                                break;
+                            case "огненный":
+                                Console.WriteLine("водяной");
+                                break;
+                            default:
+                                Console.WriteLine("Неправильно введён тип");
+                                break;
+                        }
+                        break;
+                    case ("Сильность"):
+                        switch (petType)
+                        {
+                            case "огненный":
+                                Console.WriteLine("травяной");
+                                break;
+                            case "травяной":
+                                Console.WriteLine("водяной");
+                                break;
+                            case "водяной":
+                                Console.WriteLine("огненный");
+                                break;
+                            default:
+                                Console.WriteLine("Неправильно введён тип");
+                                break;
+                        }
+                        break;
+
+                    default:
+                break;
+
+                }
+             if (command == "Выйти") {
+                    break;
+                }
+            }
+
+
+        }
+    }
+}
