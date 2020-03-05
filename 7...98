@@ -1,0 +1,32 @@
+using System;
+
+namespace ОбучениеДиск
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int increasingNumber;
+            increasingNumber = 0;
+            long i;
+            i = 10;
+            while (i>0)
+            {
+                if (increasingNumber != 98)
+                {
+                    increasingNumber += 7;
+                    Console.WriteLine(increasingNumber);
+                }
+                else
+                {
+                    Console.WriteLine(increasingNumber);
+                    break;
+
+                }
+                
+            }
+
+
+        }
+    }
+}
