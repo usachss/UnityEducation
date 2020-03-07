@@ -11,21 +11,18 @@ namespace ОбучениеДиск
             string name;
             string petType;
             petType = "null";
-
-            long i;
-            i = 10;
             Console.WriteLine("" +
                  "Имя - задать ваше имя\n" +
                  "Тип покемона - задать тип покемона(травяной, водяной, огненный\n" +
                  "Слабость - узнать тип против которого проиграете\n" +
                  "Сильность - узнать тип против которого победите\n" +
                  "Выйти - выйти из выбора комманд");
-            while (i>0)
+            while (true)
             {
-
                 Console.WriteLine("Пожалуйства введите команду:");
                 command = Console.ReadLine();
-                switch (command){
+                switch (command)
+                {
                     case ("Имя"):
                         name = Console.ReadLine();
                         break;
@@ -66,13 +63,13 @@ namespace ОбучениеДиск
                                 break;
                         }
                         break;
-
                     default:
-                break;
-
+                        Console.WriteLine("Команда введена неверно");
+                        break;
                 }
-             if (command == "Выйти") {
-                    break;
+            if (command == "Выйти") 
+                {
+                break;
                 }
             }
 
