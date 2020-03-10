@@ -1,0 +1,19 @@
+using System;
+
+namespace StringSign
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int allPictures;
+            int numberOfRows;
+            int theLastPics;
+            allPictures = 52;
+            numberOfRows = allPictures / 3;
+            theLastPics = allPictures % 3;
+            Console.WriteLine(numberOfRows);
+            Console.WriteLine(theLastPics);
+        }
+    }
+}
