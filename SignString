@@ -1,0 +1,30 @@
+namespace StringSign
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name;
+            int i;
+            string symbol;
+            Console.WriteLine("Введи свое имя, мешок с мясом и костями:");
+            name = Console.ReadLine();
+            Console.WriteLine("Введи символ, кожанное ничтожество:");
+            symbol = Console.ReadLine();
+            i = name.Length;
+            
+            while (i != 0)
+            {
+                i--;
+                Console.Write(symbol);
+            }
+            Console.WriteLine("\n"+symbol + name + symbol);
+            i = name.Length;
+            while (i != 0)
+            {
+                i--;
+                Console.Write(symbol);
+            }
+        }
+    }
+}
