@@ -1,3 +1,4 @@
+using System;
 namespace StringSign
 {
     class Program
@@ -5,24 +6,23 @@ namespace StringSign
         static void Main(string[] args)
         {
             string name;
-            int i;
+            int iterationCounter;
             string symbol;
             Console.WriteLine("Введи свое имя, мешок с мясом и костями:");
             name = Console.ReadLine();
             Console.WriteLine("Введи символ, кожанное ничтожество:");
             symbol = Console.ReadLine();
-            i = name.Length;
-            
-            while (i != 0)
+            iterationCounter = name.Length+2;
+            while (iterationCounter != 0)
             {
-                i--;
+                iterationCounter--;
                 Console.Write(symbol);
             }
-            Console.WriteLine("\n"+symbol + name + symbol);
-            i = name.Length;
-            while (i != 0)
+            Console.WriteLine("\n" + symbol + name + symbol);
+            iterationCounter = name.Length+2;
+            while (iterationCounter != 0)
             {
-                i--;
+                iterationCounter--;
                 Console.Write(symbol);
             }
         }
