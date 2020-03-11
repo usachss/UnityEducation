@@ -6,23 +6,23 @@ namespace StringSign
         static void Main(string[] args)
         {
             string name;
-            int iterationCounter;
+            int symbolsNumber;
             string symbol;
             Console.WriteLine("Введи свое имя, мешок с мясом и костями:");
             name = Console.ReadLine();
             Console.WriteLine("Введи символ, кожанное ничтожество:");
             symbol = Console.ReadLine();
-            iterationCounter = name.Length+2;
-            while (iterationCounter != 0)
+            symbolsNumber = name.Length+2;
+            while (symbolsNumber != 0)
             {
-                iterationCounter--;
+                symbolsNumber--;
                 Console.Write(symbol);
             }
             Console.WriteLine("\n" + symbol + name + symbol);
-            iterationCounter = name.Length+2;
-            while (iterationCounter != 0)
+            symbolsNumber = name.Length+2;
+            while (symbolsNumber != 0)
             {
-                iterationCounter--;
+                symbolsNumber--;
                 Console.Write(symbol);
             }
         }
