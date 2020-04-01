@@ -1,0 +1,53 @@
+using System;
+
+namespace array
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int compareValue = int.MinValue;
+            int iMAX;
+            int jMAX;
+            iMAX = 0;
+            jMAX = 0;
+            int [,] twoDivisionsArray  = { 
+                {1, 2, 3}, 
+                {3, 2, 1}, 
+                {6, 1, 1 } };
+
+            for (int i = 0; i < twoDivisionsArray.GetLength(0); i++)
+            {         
+                for (int j = 0; j < twoDivisionsArray.GetLength(1); j++)
+                {
+                    Console.Write(twoDivisionsArray[i,j]+" ");
+                    
+                }
+            }
+            for (int i = 0; i < twoDivisionsArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < twoDivisionsArray.GetLength(1); j++)
+                {
+                    if (twoDivisionsArray[i, j] > compareValue)
+                    {
+                        compareValue = twoDivisionsArray[i, j];
+                        iMAX = i;
+                        jMAX = j;
+                    }
+
+
+                }
+            }
+                twoDivisionsArray[iMAX, jMAX] = 0;
+                Console.Write("\n"+twoDivisionsArray[iMAX, jMAX] + " \n");
+                for (int i = 0; i < twoDivisionsArray.GetLength(0); i++)
+                {
+                    for (int j = 0; j < twoDivisionsArray.GetLength(1); j++)
+                    {
+                        Console.Write(twoDivisionsArray[i, j] + " ");
+                    }
+                }
+            
+        }
+    }
+}
