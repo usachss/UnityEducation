@@ -11,17 +11,23 @@ namespace array
             int jMAX;
             iMAX = 0;
             jMAX = 0;
-            int [,] twoDivisionsArray  = { 
-                {1, 2, 3}, 
-                {3, 2, 1}, 
-                {6, 1, 1 } };
+            int counterOfArrayElements;
+            counterOfArrayElements = 0;
+            int [,] twoDivisionsArray  = new int [10,10];
 
             for (int i = 0; i < twoDivisionsArray.GetLength(0); i++)
             {         
                 for (int j = 0; j < twoDivisionsArray.GetLength(1); j++)
                 {
+                    Random rand = new Random();
+                    twoDivisionsArray[i, j] = rand.Next(10,99);
                     Console.Write(twoDivisionsArray[i,j]+" ");
-                    
+                    counterOfArrayElements++;
+                    if (counterOfArrayElements % 10 == 0)
+                    {
+                        Console.WriteLine("\n");
+                    }
+
                 }
             }
             for (int i = 0; i < twoDivisionsArray.GetLength(0); i++)
@@ -38,14 +44,20 @@ namespace array
 
                 }
             }
-                twoDivisionsArray[iMAX, jMAX] = 0;
-                Console.Write("\n"+twoDivisionsArray[iMAX, jMAX] + " \n");
+            Console.Write("\n" + twoDivisionsArray[iMAX, jMAX] + $" [{iMAX},{jMAX}] \n");
+            twoDivisionsArray[iMAX, jMAX] = 0;
+
                 for (int i = 0; i < twoDivisionsArray.GetLength(0); i++)
                 {
                     for (int j = 0; j < twoDivisionsArray.GetLength(1); j++)
                     {
-                        Console.Write(twoDivisionsArray[i, j] + " ");
+                    counterOfArrayElements++;
+                    Console.Write(twoDivisionsArray[i, j] + " ");
+                    if (counterOfArrayElements % 10 == 0)
+                    {
+                        Console.WriteLine("\n");
                     }
+                }
                 }
             
         }
