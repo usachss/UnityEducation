@@ -7,21 +7,21 @@ namespace array
         static void Main(string[] args)
         {
             int compareValue = int.MinValue;
-            int iMAX;
-            int jMAX;
-            iMAX = 0;
-            jMAX = 0;
+            int iMaxElement;
+            int jMaxElement;
+            iMaxElement = 0;
+            jMaxElement = 0;
             int counterOfArrayElements;
             counterOfArrayElements = 0;
-            int [,] twoDivisionsArray  = new int [10,10];
+            int[,] twoDivisionsArray = new int[10, 10];
 
             for (int i = 0; i < twoDivisionsArray.GetLength(0); i++)
-            {         
+            {
                 for (int j = 0; j < twoDivisionsArray.GetLength(1); j++)
                 {
                     Random rand = new Random();
-                    twoDivisionsArray[i, j] = rand.Next(10,99);
-                    Console.Write(twoDivisionsArray[i,j]+" ");
+                    twoDivisionsArray[i, j] = rand.Next(10, 99);
+                    Console.Write(twoDivisionsArray[i, j] + "   ");
                     counterOfArrayElements++;
                     if (counterOfArrayElements % 10 == 0)
                     {
@@ -37,29 +37,29 @@ namespace array
                     if (twoDivisionsArray[i, j] > compareValue)
                     {
                         compareValue = twoDivisionsArray[i, j];
-                        iMAX = i;
-                        jMAX = j;
+                        iMaxElement = i;
+                        jMaxElement = j;
                     }
 
 
                 }
             }
-            Console.Write("\n" + twoDivisionsArray[iMAX, jMAX] + $" [{iMAX},{jMAX}] \n");
-            twoDivisionsArray[iMAX, jMAX] = 0;
+            Console.Write("\n" + twoDivisionsArray[iMaxElement, jMaxElement] + $" [{iMaxElement},{jMaxElement}] \n");
+            twoDivisionsArray[iMaxElement, jMaxElement] = 0;
 
-                for (int i = 0; i < twoDivisionsArray.GetLength(0); i++)
+            for (int i = 0; i < twoDivisionsArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < twoDivisionsArray.GetLength(1); j++)
                 {
-                    for (int j = 0; j < twoDivisionsArray.GetLength(1); j++)
-                    {
                     counterOfArrayElements++;
-                    Console.Write(twoDivisionsArray[i, j] + " ");
+                    Console.Write(twoDivisionsArray[i, j] + "   ");
                     if (counterOfArrayElements % 10 == 0)
                     {
                         Console.WriteLine("\n");
                     }
                 }
-                }
-            
+            }
+
         }
     }
 }
