@@ -1,0 +1,33 @@
+using System;
+
+namespace massive30
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[] twoDivisionsArray = new int[30];
+
+                for (int i = 0; i < twoDivisionsArray.Length; i++)
+                {
+                    Random rand = new Random();
+                    twoDivisionsArray[i] = rand.Next(10, 99);
+                    Console.Write(twoDivisionsArray[i] + " ");
+                    if ((i%5==0)&&(i!=0))
+                    {
+                        Console.Write("\n");
+                    }
+                }
+
+            for (int i = 0; i < twoDivisionsArray.Length-2; i++)
+            {
+                if ((twoDivisionsArray[i] < twoDivisionsArray[i + 1]) && (twoDivisionsArray[i + 1] > twoDivisionsArray[i + 2]) && ((i) < (twoDivisionsArray.Length - 1)))
+                {
+                    Console.WriteLine(twoDivisionsArray[i + 1]);
+                }
+
+            }
+        }
+    }
+}
