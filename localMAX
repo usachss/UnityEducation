@@ -1,32 +1,45 @@
 using System;
 
-namespace massive30
+namespace LocalMax
 {
     class Program
     {
+
         static void Main(string[] args)
         {
 
             int[] twoDivisionsArray = new int[30];
-
-                for (int i = 0; i < twoDivisionsArray.Length; i++)
-                {
-                    Random rand = new Random();
-                    twoDivisionsArray[i] = rand.Next(10, 99);
-                    Console.Write(twoDivisionsArray[i] + " ");
-                    if ((i%5==0)&&(i!=0))
-                    {
-                        Console.Write("\n");
-                    }
-                }
-
-            for (int i = 0; i < twoDivisionsArray.Length-2; i++)
+            for (int i = 0; i < twoDivisionsArray.Length; i++)
             {
-                if ((twoDivisionsArray[i] < twoDivisionsArray[i + 1]) && (twoDivisionsArray[i + 1] > twoDivisionsArray[i + 2]) && ((i) < (twoDivisionsArray.Length - 1)))
-                {
-                    Console.WriteLine(twoDivisionsArray[i + 1]);
-                }
+                Random rand = new Random();
+                twoDivisionsArray[i] = rand.Next(10, 99);
+                Console.Write(twoDivisionsArray[i] + " ");
 
+
+                //if ((i % 5 == 0) && (i != 0))
+                //{
+                //    Console.Write("\n");
+                //}
+            }
+
+            Console.Write("\n");
+            Console.WriteLine("Локальные Максимумы");
+            if (twoDivisionsArray[0] > twoDivisionsArray[1])
+            {
+                Console.Write(twoDivisionsArray[0] + " ");
+            }
+            for (int i = 0; i < twoDivisionsArray.Length - 2; i++)
+            {
+                
+                if ((twoDivisionsArray[i] < twoDivisionsArray[i + 1]) & (twoDivisionsArray[i + 1] > twoDivisionsArray[i + 2]) & ((i) < (twoDivisionsArray.Length - 1)))
+                {
+                    Console.Write(twoDivisionsArray[i + 1] + " ");
+                }
+                
+            }
+            if (twoDivisionsArray[twoDivisionsArray.Length - 1] > twoDivisionsArray[twoDivisionsArray.Length - 2])
+            {
+                Console.Write(twoDivisionsArray[twoDivisionsArray.Length - 1] + " ");
             }
         }
     }
