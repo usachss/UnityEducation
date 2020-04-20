@@ -9,9 +9,10 @@ namespace LocalMax
         {
 
             int[] twoDivisionsArray = new int[30];
+            Random rand = new Random();
             for (int i = 0; i < twoDivisionsArray.Length; i++)
             {
-                Random rand = new Random();
+                
                 twoDivisionsArray[i] = rand.Next(10, 99);
                 Console.Write(twoDivisionsArray[i] + " ");
             }
