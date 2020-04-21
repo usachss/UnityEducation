@@ -8,33 +8,33 @@ namespace LocalMax
         static void Main(string[] args)
         {
 
-            int[] twoDivisionsArray = new int[30];
+            int[] randomNumbersArray = new int[30];
             Random rand = new Random();
-            for (int i = 0; i < twoDivisionsArray.Length; i++)
+            for (int i = 0; i < randomNumbersArray.Length; i++)
             {
                 
-                twoDivisionsArray[i] = rand.Next(10, 99);
-                Console.Write(twoDivisionsArray[i] + " ");
+                randomNumbersArray[i] = rand.Next(10, 99);
+                Console.Write(randomNumbersArray[i] + " ");
             }
 
             Console.Write("\n");
             Console.WriteLine("Локальные Максимумы");
-            if (twoDivisionsArray[0] > twoDivisionsArray[1])
+            if (randomNumbersArray[0] > randomNumbersArray[1])
             {
-                Console.Write(twoDivisionsArray[0] + " ");
+                Console.Write(randomNumbersArray[0] + " ");
             }
-            for (int i = 0; i < twoDivisionsArray.Length - 2; i++)
+            for (int i = 0; i < randomNumbersArray.Length - 2; i++)
             {
 
-                if ((twoDivisionsArray[i] < twoDivisionsArray[i + 1]) & (twoDivisionsArray[i + 1] > twoDivisionsArray[i + 2]) & ((i) < (twoDivisionsArray.Length - 1)))
+                if ((randomNumbersArray[i] < randomNumbersArray[i + 1]) & (randomNumbersArray[i + 1] > randomNumbersArray[i + 2]))
                 {
-                    Console.Write(twoDivisionsArray[i + 1] + " ");
+                    Console.Write(randomNumbersArray[i + 1] + " ");
                 }
 
             }
-            if (twoDivisionsArray[twoDivisionsArray.Length - 1] > twoDivisionsArray[twoDivisionsArray.Length - 2])
+            if (randomNumbersArray[randomNumbersArray.Length - 1] > randomNumbersArray[randomNumbersArray.Length - 2])
             {
-                Console.Write(twoDivisionsArray[twoDivisionsArray.Length - 1] + " ");
+                Console.Write(randomNumbersArray[randomNumbersArray.Length - 1] + " ");
             }
         }
     }
