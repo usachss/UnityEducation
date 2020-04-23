@@ -8,9 +8,9 @@ namespace PersonnelAcoounting
         {
             string[] persons = new string[2];
             string[] positions = new string[2];
-            persons[0] = "Иванов Иван Иванович";
+            persons[0] = "Смирнов Иван Иванович";
             positions[0] = "Главный по дефолтам";
-            persons[1] = "Ивановна Ивана Ивановичевна";
+            persons[1] = "Кузнецова Ивана Ивановичевна";
             positions[1] = "Главная по дефолтам";
             int operationNumber;
 
@@ -21,7 +21,7 @@ namespace PersonnelAcoounting
                 switch (operationNumber)
                 {
                     case 1:
-                        FindingFirstName(ref persons, ref positions);
+                        FindingScndName(ref persons, ref positions);
                         break;
                     case 2:
                         AddingAccount(ref persons, ref positions);
@@ -37,7 +37,7 @@ namespace PersonnelAcoounting
                 }
             }
         }
-        static void FindingFirstName(ref string[] person, ref string[] position)
+        static void FindingScndName(ref string[] person, ref string[] position)
 
         {
             Console.WriteLine("Введите фамилию для поиска:");
@@ -45,12 +45,11 @@ namespace PersonnelAcoounting
 
             for (int i = 0; i < person.Length; i++)
             {
-                if (person[i].Contains(personScndName))
+                if (person[i].Contains(personScndName)&(person[i].IndexOf(personScndName)==0))
                     {
                         Console.WriteLine($"{i + 1} {person[i]} {position[i]}");
                         break;
                     }
-
             }
         }
         static void AddingAccount(ref string[] person, ref string[] position)
@@ -78,7 +77,6 @@ namespace PersonnelAcoounting
             {
                 Console.Write((i + 1) + ")" + " " + persons[i] + " " + positions[i] + " "); ;
             }
-
         }
         static void DeleteAccount(ref string[] person, ref string[] position)
         {
@@ -99,8 +97,6 @@ namespace PersonnelAcoounting
             }
             person = newPersons;
             position = newPositions;
-
-
         }
     }
 }
