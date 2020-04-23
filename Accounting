@@ -1,0 +1,106 @@
+using System;
+
+namespace PersonnelAcoounting
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] persons = new string[2];
+            string[] positions = new string[2];
+            persons[0] = "Иванов Иван Иванович";
+            positions[0] = "Главный по дефолтам";
+            persons[1] = "Ивановна Ивана Ивановичевна";
+            positions[1] = "Главная по дефолтам";
+            int operationNumber;
+
+            while (true)
+            {
+                Console.WriteLine("\nВведите номер операции:\n1 - Поиск по фамилии\n2 - добавить досье \n3 - вывести список досье \n4 - удалить досье  \nЛюбая другая клаиваша - выход");
+                operationNumber = Convert.ToInt32(Console.ReadLine());
+                switch (operationNumber)
+                {
+                    case 1:
+                        FindingFirstName(ref persons, ref positions);
+                        break;
+                    case 2:
+                        AddingAccount(ref persons, ref positions);
+                        break;
+                    case 3:
+                        WritingAccounts(persons, positions);
+                        break;
+                    case 4: 
+                        DeleteAccount(ref persons, ref positions);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        static void FindingFirstName(ref string[] person, ref string[] position)
+
+        {
+            Console.WriteLine("Введите фамилию для поиска:");
+            string personScndName = Console.ReadLine();
+
+            for (int i = 0; i < person.Length; i++)
+            {
+                if (person[i].Contains(personScndName))
+                    {
+                        Console.WriteLine($"{i + 1} {person[i]} {position[i]}");
+                        break;
+                    }
+
+            }
+        }
+        static void AddingAccount(ref string[] person, ref string[] position)
+
+        {
+            Console.WriteLine("Напишите ФИО, в формате Фамилия Имя Отчество ");
+            string newPersonName = Console.ReadLine();
+            Console.WriteLine("Напишите должность");
+            string newPersonPosition = Console.ReadLine();
+            string[] newPersons = new string[person.Length + 1];
+            string[] newPositions = new string[position.Length + 1];
+            for (int i = 0; i <= person.Length - 1; i++)
+            {
+                newPersons[i] = person[i];
+                newPositions[i] = position[i];
+            }
+            newPersons[newPersons.Length - 1] = newPersonName;
+            newPositions[newPositions.Length - 1] = newPersonPosition;
+            person = newPersons;
+            position = newPositions;
+        }
+        static void WritingAccounts(string[] persons, string[] positions)
+        {
+            for (int i = 0; i < persons.Length; i++)
+            {
+                Console.Write((i + 1) + ")" + " " + persons[i] + " " + positions[i] + " "); ;
+            }
+
+        }
+        static void DeleteAccount(ref string[] person, ref string[] position)
+        {
+            Console.WriteLine("Введите номер досье на удаление");
+            int accountNumberToDelete = Convert.ToInt32(Console.ReadLine());
+            for (int i = accountNumberToDelete; i < person.Length-1; i++)
+            {
+                person[i] = person[i + 1];
+                position[i] = position[i + 1];
+
+            }
+            string[] newPersons = new string[person.Length - 1];
+            string[] newPositions = new string[position.Length - 1];
+            for (int i = 0; i < newPersons.Length; i++)
+            {
+                newPersons[i] = person[i];
+                newPositions[i] = position[i];
+            }
+            person = newPersons;
+            position = newPositions;
+
+
+        }
+    }
+}
