@@ -6,25 +6,23 @@ namespace normShuffle
     {
         static void Main(string[] args)
         {
-            int[] arrayToShuffle = {1,3,4,6,7};
-            Shuffle(ref arrayToShuffle);
-            
-            for (int i = 0; i < arrayToShuffle.Length; i++)
+            int[] array = {1,3,4,6,7};
+
+            Shuffle(ref array);
+            for (int i = 0; i < array.Length; i++)
             {
-                Console.Write("\n" + arrayToShuffle[i]);
+                Console.Write("\n" + array[i]);
             }
         }
-        
-        static void Shuffle(ref int[] arrayToShuffle)
+        static void Shuffle(ref int[] arrayToRandomize)
         {
             Random rand = new Random();
-            for (int i = arrayToShuffle.Length-1; i > 0; i--)
+            for (int i = arrayToRandomize.Length-1; i > 0; i--)
             {
-                int j = rand.Next(i+1);
-                int k = arrayToShuffle[j];
-                arrayToShuffle[j] = arrayToShuffle[i];
-                arrayToShuffle[i] = k;
-               // Console.Write("\n"+arrayToShuffle[i]);
+                int randomArrayElement = rand.Next(i+1);
+                int tempElement = arrayToRandomize[randomArrayElement];
+                arrayToRandomize[randomArrayElement] = arrayToRandomize[i];
+                arrayToRandomize[i] = tempElement;
             }
         }
     }
