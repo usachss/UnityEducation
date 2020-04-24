@@ -1,0 +1,43 @@
+using System;
+
+namespace StringToInt
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.WriteLine(ParseToInt());
+            }
+
+        }
+        static int ParseToInt()
+        {
+            while (true)
+            {
+                string parsingValue;
+                Console.WriteLine("Введите число для преобразования:");
+                parsingValue = Console.ReadLine();
+                bool successParsing = int.TryParse(parsingValue, out int parsedValue);
+                while (parsingValue != "")
+                {
+                    if (successParsing)
+                    {
+                        Console.WriteLine($"Пропарсил:{parsedValue}");
+                        return (parsedValue);
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Введённое число не подходит, попробуйте ещё раз");
+                        break;
+                    }
+
+                }
+
+            }
+
+        }
+    }
+}
